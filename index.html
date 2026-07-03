@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barber&iacute;a Doctor Fade &mdash; Castell&oacute;n | Cortes, fades y barba</title>
+<meta name="description" content="Barber&iacute;a Doctor Fade en Castell&oacute;n de la Plana: cortes personalizados, fades, afeitado, barba, coloraci&oacute;n y corte infantil. Valoraci&oacute;n 4,6 en Google.">
+<meta name="theme-color" content="#0b0a12">
+<!-- Cambia esta URL por tu dominio o tu URL de GitHub Pages -->
+<link rel="canonical" href="https://TU-USUARIO.github.io/doctor-fade/">
+<meta property="og:title" content="Barber&iacute;a Doctor Fade &mdash; Castell&oacute;n">
+<meta property="og:description" content="Cortes personalizados, fades, afeitado, barba, coloraci&oacute;n y corte infantil en Castell&oacute;n de la Plana. &#9733; 4,6 en Google.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/Unbounded.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/SpaceGrotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="page-home">
+<noscript><div class="ns">Esta web funciona sin JavaScript, pero con &eacute;l ver&aacute;s las animaciones completas.</div></noscript>
+
+<!-- ===== INTRO SPRAY ===== -->
+<div id="intro" aria-hidden="true">
+  <div class="panel top"></div>
+  <div class="panel bot"></div>
+  <div class="intro-stage">
+    <canvas id="introCanvas"></canvas>
+    <svg id="sprayCan" viewBox="0 0 60 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- lata de spray (ilustraci&oacute;n propia) -->
+      <rect x="10" y="26" width="40" height="62" rx="7" fill="#1c1830" stroke="#3b3360" stroke-width="2"/>
+      <rect x="10" y="40" width="40" height="20" fill="#ff2e88"/>
+      <rect x="10" y="60" width="40" height="9" fill="#29c8ff"/>
+      <rect x="10" y="69" width="40" height="8" fill="#69e95c"/>
+      <rect x="16" y="18" width="28" height="10" rx="3" fill="#8b8fa8"/>
+      <rect x="25" y="8" width="10" height="12" rx="2.5" fill="#e8e6f5"/>
+      <rect x="28" y="10" width="4" height="4" rx="1" fill="#ff2e88"/>
+      <circle cx="30" cy="52" r="9" fill="#0b0a12"/>
+      <path d="M25 52l4-4 6 3-4 5z" fill="#fff"/>
+    </svg>
+  </div>
+  <div class="intro-tag">Barber&iacute;a &middot; Castell&oacute;n de la Plana</div>
+</div>
+
+<!-- ===== FONDO AMBIENTE ===== -->
+<div class="ambient" aria-hidden="true">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="blob b3"></div><div class="blob b4"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Barber&iacute;a Doctor Fade, inicio">
+      <img src="assets/img/logo-420.webp" alt="Logo de Barber&iacute;a Doctor Fade" width="44" height="44">
+      <span class="brand-txt">
+        <span class="brand-name">DOCTOR <em>FADE</em></span>
+        <span class="brand-sub">Barber&iacute;a &middot; Castell&oacute;n</span>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="Principal">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="galeria.html">Galer&iacute;a</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <a class="btn wa header-cta" href="https://wa.me/34634376102?text=Hola%2C%20quiero%20reservar%20una%20cita%20en%20Doctor%20Fade" target="_blank" rel="noopener">
+      <svg class="ic" viewBox="0 0 448 512" fill="#fff"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+      Reservar cita
+    </a>
+    <button class="burger" aria-label="Abrir men&uacute;" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== MEN&Uacute; M&Oacute;VIL ===== -->
+<div class="mobile-menu">
+  <div>
+    <nav aria-label="Men&uacute; m&oacute;vil">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="galeria.html">Galer&iacute;a</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="mm-meta">
+      <a href="tel:+34634376102">634 37 61 02</a>
+      <a href="https://wa.me/34634376102?text=Hola%2C%20quiero%20reservar%20una%20cita%20en%20Doctor%20Fade" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://instagram.com/drfade_castellon" target="_blank" rel="noopener">@drfade_castellon</a>
+      <span>C. del Cant&oacute; de Castalia &middot; Castell&oacute;n</span>
+    </div>
+  </div>
+</div>
+
+<main>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg" data-plx="0.14">
+      <img src="assets/img/local.webp" alt="Interior de la Barber&iacute;a Doctor Fade en Castell&oacute;n, con murales de colores y sillones de barbero" fetchpriority="high">
+    </div>
+    <div class="wrap hero-grid">
+      <div>
+        <div class="rating-pill" data-rv="up" data-onload style="--rv-d:.1s">
+          <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span><b>4,6</b> &middot; 51 rese&ntilde;as en Google</span>
+        </div>
+        <h1 class="h-xl kinetic" data-onload>El arte del <span class="grad-text">fade</span> en Castell&oacute;n</h1>
+        <p class="lead" data-rv="up" data-onload style="--rv-d:.5s">
+          Barber&iacute;a cl&aacute;sica con esp&iacute;ritu urbano. Cortes personalizados, barba,
+          afeitado y coloraci&oacute;n para hombres, se&ntilde;ores y ni&ntilde;os, en la
+          C. del Cant&oacute; de Castalia.
+        </p>
+        <div class="hero-ctas" data-rv="up" data-onload style="--rv-d:.65s">
+          <a class="btn" href="tel:+34634376102">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+            Llamar y reservar
+          </a>
+          <a class="btn wa" href="https://wa.me/34634376102?text=Hola%2C%20quiero%20reservar%20una%20cita%20en%20Doctor%20Fade" target="_blank" rel="noopener">
+            <svg class="ic" viewBox="0 0 448 512" fill="#fff"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+            WhatsApp
+          </a>
+          <a class="btn ghost" href="galeria.html">Ver trabajos</a>
+        </div>
+        <div class="hero-badges" data-rv="up" data-onload style="--rv-d:.8s">
+          <span class="chip c1">Fades &amp; cortes personalizados</span>
+          <span class="chip c2">Barba &amp; afeitado</span>
+          <span class="chip c3">Coloraci&oacute;n &middot; Corte infantil</span>
+        </div>
+      </div>
+      <img class="hero-logo" src="assets/img/logo-760.webp"
+           alt="Emblema de Doctor Fade Barber&iacute;a" data-rv="scale" data-onload style="--rv-d:.7s" data-plx="0.06">
+    </div>
+    <div class="scroll-hint" aria-hidden="true"></div>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span><b>Cortes personalizados</b><i>&#10022;</i></span>
+      <span><b>Fades</b><i>&#10022;</i></span>
+      <span><b>Barba</b><i>&#10022;</i></span>
+      <span><b>Afeitado</b><i>&#10022;</i></span>
+      <span><b>Coloraci&oacute;n</b><i>&#10022;</i></span>
+      <span><b>Corte infantil</b><i>&#10022;</i></span>
+      <span><b>Castell&oacute;n de la Plana</b><i>&#10022;</i></span>
+      <span><b>Cortes personalizados</b><i>&#10022;</i></span>
+      <span><b>Fades</b><i>&#10022;</i></span>
+      <span><b>Barba</b><i>&#10022;</i></span>
+      <span><b>Afeitado</b><i>&#10022;</i></span>
+      <span><b>Coloraci&oacute;n</b><i>&#10022;</i></span>
+      <span><b>Corte infantil</b><i>&#10022;</i></span>
+      <span><b>Castell&oacute;n de la Plana</b><i>&#10022;</i></span>
+    </div>
+  </div>
+
+  <!-- ===== STATS ===== -->
+  <section class="section tight">
+    <div class="wrap">
+      <div class="stats" data-stagger="90">
+        <div class="stat" data-rv="up">
+          <div class="num"><span data-count="4,6">0</span><small>/ 5</small></div>
+          <div class="lbl">Valoraci&oacute;n media en Google</div>
+          <div class="bar"></div>
+        </div>
+        <div class="stat" data-rv="up">
+          <div class="num"><span data-count="51">0</span><small>+</small></div>
+          <div class="lbl">Rese&ntilde;as de clientes</div>
+          <div class="bar"></div>
+        </div>
+        <div class="stat" data-rv="up">
+          <div class="num"><span data-count="6">0</span><small>d&iacute;as</small></div>
+          <div class="lbl">Abiertos a la semana, de lunes a s&aacute;bado</div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICIOS ===== -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker" data-rv="up">Servicios</span>
+      <h2 class="h-lg kinetic">Lo que hacemos <span class="underline-draw">cada d&iacute;a</span></h2>
+      <p class="lead" data-rv="up" style="--rv-d:.15s;margin-top:14px">
+        Del cl&aacute;sico m&aacute;s elegante a la tendencia m&aacute;s actual.
+        Precios con cita previa: ll&aacute;manos o escr&iacute;benos por Instagram.
+      </p>
+      <div class="cards-grid" data-stagger="80" style="margin-top:40px">
+        <div class="tcard" data-rv="up">
+          <div class="tcard-inner">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#ff2e88" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
+            <h3>Corte personalizado</h3>
+            <p>Fades, cl&aacute;sicos y estilos modernos adaptados a tu tipo de cabello y a tu personalidad.</p>
+          </div>
+        </div>
+        <div class="tcard" data-rv="up">
+          <div class="tcard-inner">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#29c8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v10"/><path d="M7 13c0 3.5 2.2 6.5 5 8 2.8-1.5 5-4.5 5-8"/><path d="M7 13h10"/></svg></div>
+            <h3>Arreglo de barba</h3>
+            <p>Perfilado y acondicionamiento de barba para un acabado cuidado y definido.</p>
+          </div>
+        </div>
+        <div class="tcard" data-rv="up">
+          <div class="tcard-inner">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#69e95c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l10-10 3 3-10 10H4z"/><path d="M14 7l3-3 3 3-3 3"/></svg></div>
+            <h3>Afeitado</h3>
+            <p>Afeitado con la precisi&oacute;n y el ritual de la barber&iacute;a de toda la vida.</p>
+          </div>
+        </div>
+        <div class="tcard" data-rv="up">
+          <div class="tcard-inner">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s6 7 6 12a6 6 0 0 1-12 0c0-5 6-12 6-12z"/></svg></div>
+            <h3>Coloraci&oacute;n capilar</h3>
+            <p>Tintes y decoloraci&oacute;n para los que buscan un cambio audaz.</p>
+          </div>
+        </div>
+        <div class="tcard" data-rv="up">
+          <div class="tcard-inner">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#ffc93c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></div>
+            <h3>Corte infantil</h3>
+            <p>Paciencia y buen rollo para que los m&aacute;s peque&ntilde;os salgan contentos.</p>
+          </div>
+        </div>
+        <div class="tcard" data-rv="up">
+          <div class="tcard-inner">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7ab5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V6a2 2 0 0 1 2-2h2v16"/><path d="M8 8h12M8 12h12M8 16h8"/></svg></div>
+            <h3>Estilizado</h3>
+            <p>Peinado y acabado, del look casual al m&aacute;s formal, con buenos productos.</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:34px" data-rv="up">
+        <a class="btn ghost" href="servicios.html">Ver todos los servicios &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NOSOTROS (split) ===== -->
+  <section class="section">
+    <div class="wrap split">
+      <div class="split-media" data-rv="left">
+        <span class="tape">La barber&iacute;a</span>
+        <img src="assets/img/local.webp" data-plx="0.07"
+             alt="El equipo de Doctor Fade en el local de Castell&oacute;n, decorado con murales urbanos de colores">
+      </div>
+      <div>
+        <span class="kicker" data-rv="up">Nosotros</span>
+        <h2 class="h-lg kinetic">Barber&iacute;a cl&aacute;sica, <span class="grad-text">flow</span> de hoy</h2>
+        <p class="lead" data-rv="up" style="--rv-d:.15s;margin-top:14px">
+          En Doctor Fade fusionamos la tradici&oacute;n de la barber&iacute;a cl&aacute;sica con un
+          toque moderno. Cada corte se trabaja al detalle para que salgas con el
+          estilo que buscas.
+        </p>
+        <ul class="checklist" data-stagger="90">
+          <li data-rv="up"><span class="ck">&#10003;</span><span><b>Para todos:</b> hombres, se&ntilde;ores y ni&ntilde;os, con trato cercano.</span></li>
+          <li data-rv="up"><span class="ck">&#10003;</span><span><b>Personalizaci&oacute;n real:</b> asesoramos seg&uacute;n tu tipo de cabello y tus gustos.</span></li>
+          <li data-rv="up"><span class="ck">&#10003;</span><span><b>Ambiente &uacute;nico:</b> un local lleno de color y m&uacute;sica donde da gusto cortarse el pelo.</span></li>
+        </ul>
+        <div style="margin-top:30px" data-rv="up">
+          <a class="btn" href="contacto.html">C&oacute;mo encontrarnos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHOWCASE SCROLL ===== -->
+  <div class="showcase-wrap">
+    <section class="showcase">
+      <div class="wrap">
+        <div>
+          <span class="kicker">Trabajos reales</span>
+          <h2 class="h-lg">Hecho en la silla de Doctor Fade</h2>
+          <div class="show-list" style="margin-top:22px">
+            <div class="show-item active">
+              <h3><span class="idx">01</span> Fade con dise&ntilde;o</h3>
+              <p>L&iacute;neas y dibujos a m&aacute;quina sobre degradado limpio.</p>
+            </div>
+            <div class="show-item">
+              <h3><span class="idx">02</span> Low fade + textura</h3>
+              <p>Degradado bajo con textura arriba, de los m&aacute;s pedidos.</p>
+            </div>
+            <div class="show-item">
+              <h3><span class="idx">03</span> Cl&aacute;sico renovado</h3>
+              <p>Corte cl&aacute;sico con acabado actual y perfilado de barba.</p>
+            </div>
+            <div class="show-item">
+              <h3><span class="idx">04</span> Estilo urbano</h3>
+              <p>Cortes modernos con personalidad, como el mullet degradado.</p>
+            </div>
+          </div>
+          <div class="show-progress"><i></i></div>
+        </div>
+        <div class="show-stage">
+          <img src="assets/img/trabajo-1.webp" class="on" alt="Fade con dise&ntilde;o de l&iacute;neas hecho en Doctor Fade">
+          <img src="assets/img/trabajo-2.webp" alt="Low fade con textura arriba">
+          <img src="assets/img/trabajo-4.webp" alt="Corte cl&aacute;sico renovado con barba perfilada">
+          <img src="assets/img/trabajo-7.webp" alt="Corte urbano estilo mullet con degradado">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== RESE&Ntilde;AS ===== -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker" data-rv="up">Rese&ntilde;as</span>
+      <h2 class="h-lg kinetic">Lo que dicen en <span class="underline-draw">Google</span></h2>
+      <div class="carousel" style="margin-top:36px" data-rv="up">
+        <div class="car-track" data-stagger="70">
+          <article class="review-card" data-rv="up">
+            <div class="stars" aria-label="5 de 5 estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>&ldquo;La mejor peluquer&iacute;a de Castell&oacute;n, me ha atendido Roger, un gran barbero, buena atenci&oacute;n al cliente.&rdquo;</p>
+            <div class="who">
+              <span class="avatar" style="background:linear-gradient(135deg,#ff2e88,#8b5cf6)">B</span>
+              <span><b>Bruno Andreu Cano</b><small>Rese&ntilde;a de Google &middot; 5/5</small></span>
+            </div>
+          </article>
+          <article class="review-card" data-rv="up">
+            <div class="stars" aria-label="5 de 5 estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>&ldquo;Lo mejor en cortes actuales y modernos, me siento totalmente a gusto y satisfecho, buen servicio y buenos barberos, gracias Roger.&rdquo;</p>
+            <div class="who">
+              <span class="avatar" style="background:linear-gradient(135deg,#29c8ff,#2e6bff)">A</span>
+              <span><b>Alejandro Ledezma</b><small>Rese&ntilde;a de Google &middot; 5/5</small></span>
+            </div>
+          </article>
+          <article class="review-card" data-rv="up">
+            <div class="stars" aria-label="5 de 5 estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>&ldquo;Un trato muy amable, cortes de pelo muy innovadores y mucha paciencia con los ni&ntilde;os.&rdquo;</p>
+            <div class="who">
+              <span class="avatar" style="background:linear-gradient(135deg,#69e95c,#29c8ff)">P</span>
+              <span><b>Patricia Nogueira</b><small>Rese&ntilde;a de Google &middot; 5/5</small></span>
+            </div>
+          </article>
+          <article class="review-card" data-rv="up">
+            <div class="stars" aria-label="5 de 5 estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>&ldquo;Buen trato y Anderson muy buen peluquero, &iexcl;es un crack! &iexcl;Recomendable!&rdquo;</p>
+            <div class="who">
+              <span class="avatar" style="background:linear-gradient(135deg,#ffc93c,#ff2e88)">S</span>
+              <span><b>Sergio Fernandez</b><small>Rese&ntilde;a de Google &middot; 5/5</small></span>
+            </div>
+          </article>
+          <article class="review-card" data-rv="up">
+            <div class="stars" aria-label="5 de 5 estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>&ldquo;Buen servicio, buenos cortes gracias Roger, muy atento y servicial.&rdquo;</p>
+            <div class="who">
+              <span class="avatar" style="background:linear-gradient(135deg,#8b5cf6,#29c8ff)">J</span>
+              <span><b>JJ C.H</b><small>Rese&ntilde;a de Google &middot; 5/5</small></span>
+            </div>
+          </article>
+          <article class="review-card" data-rv="up">
+            <div class="stars" aria-label="5 de 5 estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>&ldquo;Excelente servicio, gente s&uacute;per amable.&rdquo;</p>
+            <div class="who">
+              <span class="avatar" style="background:linear-gradient(135deg,#ff7ab5,#69e95c)">K</span>
+              <span><b>Kevin Gomez</b><small>Rese&ntilde;a de Google &middot; 5/5</small></span>
+            </div>
+          </article>
+          <a class="review-card add-review-card" href="https://maps.google.com/?q=Barber%C3%ADa+DOCTOR+FADE+Castell%C3%B3n" target="_blank" rel="noopener" data-rv="up">
+            <span class="arc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17.75l-6.16 3.24 1.18-6.88L2 9.24l6.92-1L12 2l3.08 6.24 6.92 1-5.02 4.87 1.18 6.88z"/></svg>
+            </span>
+            <b>&iexcl;Cu&eacute;ntanos tu experiencia!</b>
+            <span>D&eacute;janos tu rese&ntilde;a en Google</span>
+          </a>
+        </div>
+        <div class="car-nav">
+          <button class="car-btn car-prev" aria-label="Rese&ntilde;a anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="car-btn car-next" aria-label="Rese&ntilde;a siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="section tight">
+    <div class="wrap">
+      <div class="cta-strip" data-rv="scale">
+        <div class="cta-inner">
+          <span class="kicker" style="margin:0">Reserva tu cita</span>
+          <h2 class="h-lg">&iquest;Te cortas <span class="grad-text">hoy</span>?</h2>
+          <p class="lead">Ll&aacute;manos o escr&iacute;benos por Instagram y te damos hora.
+          Abiertos de lunes a s&aacute;bado, de 10:00 a 14:00 y de 16:00 a 20:00.</p>
+          <div class="hero-ctas">
+            <a class="btn" href="tel:+34634376102">Llamar: 634 37 61 02</a>
+            <a class="btn wa" href="https://wa.me/34634376102?text=Hola%2C%20quiero%20reservar%20una%20cita%20en%20Doctor%20Fade" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 448 512" fill="#fff"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>WhatsApp</a>
+            <a class="btn cyan" href="https://instagram.com/drfade_castellon" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo-420.webp" alt="Logo de Barber&iacute;a Doctor Fade">
+        <p>Barber&iacute;a en Castell&oacute;n de la Plana. Tradici&oacute;n cl&aacute;sica con
+        esp&iacute;ritu urbano. &#9733; 4,6 en Google.</p>
+      </div>
+      <div>
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="galeria.html">Galer&iacute;a</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+34634376102">634 37 61 02</a></li>
+          <li><a href="https://wa.me/34634376102?text=Hola%2C%20quiero%20reservar%20una%20cita%20en%20Doctor%20Fade" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://instagram.com/drfade_castellon" target="_blank" rel="noopener">@drfade_castellon</a></li>
+          <li><a href="https://maps.google.com/?q=Barber%C3%ADa+DOCTOR+FADE+Castell%C3%B3n" target="_blank" rel="noopener">C. del Cant&oacute; de Castalia<br>12006 Castell&oacute; de la Plana</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Horario</h4>
+        <ul>
+          <li>Lunes a s&aacute;bado</li>
+          <li>10:00&ndash;14:00 &middot; 16:00&ndash;20:00</li>
+          <li>Domingo: cerrado</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 <b>Barber&iacute;a Doctor Fade</b> &middot; Castell&oacute;n de la Plana</span>
+      <span>Cortes &middot; Barba &middot; Afeitado &middot; Coloraci&oacute;n</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
