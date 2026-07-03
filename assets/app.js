@@ -26,26 +26,35 @@
   function sprayIntro() {
     if (!intro) { startPage(); return; }
     if (reduceMotion) { killIntro(true); return; }
+    var isMobile = window.matchMedia('(max-width:820px)').matches;
+
+    // tocar/click para saltar la intro (ambas variantes)
+    intro.addEventListener('pointerdown', function () {
+      killIntro(false);
+    }, { once: true });
+
+    if (isMobile) {
+      // Móvil: intro ligera 100% CSS/DOM, sin canvas ni dependencia de fuentes a tiempo.
+      // Esto evita el problema real detectado: el canvas medía y pintaba el texto
+      // con la fuente de repuesto si la fuente Unbounded no llegaba a cargar en 350ms,
+      // dejando el resultado con proporciones incorrectas en redes móviles reales.
+      setTimeout(function () { killIntro(false); }, 900);
+      return;
+    }
 
     var canvas = document.getElementById('introCanvas');
     var can = document.getElementById('sprayCan');
-    var isMobile = window.matchMedia('(max-width:820px)').matches;
-    var failsafe = setTimeout(function () { killIntro(false); }, isMobile ? 1800 : 6000);
+    var failsafe = setTimeout(function () { killIntro(false); }, 6000);
     if (!canvas || !canvas.getContext) { return; } // el failsafe hará el resto
 
-    // tocar/click para saltar la intro
-    intro.addEventListener('pointerdown', function () {
-      clearTimeout(failsafe); killIntro(false);
-    }, { once: true });
-
     var ctx = canvas.getContext('2d');
-    var dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1 : 2);
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
     var box = canvas.getBoundingClientRect();
     var W = Math.round(box.width * dpr), H = Math.round(box.height * dpr);
     canvas.width = W; canvas.height = H;
 
     var PALETTE = ['#ff2e88', '#29c8ff', '#69e95c', '#8b5cf6', '#ffc93c', '#ff7ab5'];
-    var RATTLE = isMobile ? 160 : 550, PAINT = isMobile ? 620 : 2150, ENDHOLD = isMobile ? 160 : 600;
+    var RATTLE = 550, PAINT = 2150, ENDHOLD = 600;
 
     // --- ARTE FINAL (texto graffiti) ---
     var art = document.createElement('canvas'); art.width = W; art.height = H;
@@ -147,7 +156,7 @@
     var particles = [], overspray = [], drips = [];
     var painted = -1; // última letra completada
 
-    var STAMP_N = isMobile ? 3 : 10;
+    var STAMP_N = 10;
     function stampAt(x, y, brush) {
       for (var i = 0; i < STAMP_N; i++) {
         var a = Math.random() * Math.PI * 2;
@@ -217,7 +226,7 @@
         // sellos interpolados para no dejar huecos
         if (prevHead) {
           var dist = Math.hypot(head.x - prevHead.x, head.y - prevHead.y);
-          var n = Math.min(isMobile ? 3 : 8, Math.max(1, Math.ceil(dist / (L.brush * (isMobile ? 0.7 : 0.3)))));
+          var n = Math.min(8, Math.max(1, Math.ceil(dist / (L.brush * 0.3))));
           for (var i = 1; i <= n; i++) {
             var ix = lerp(prevHead.x, head.x, i / n), iy = lerp(prevHead.y, head.y, i / n);
             stampAt(ix, iy, L.brush);
@@ -450,16 +459,22 @@
      7) Menú móvil
      --------------------------------------------------------- */
   var burger = document.querySelector('.burger');
+  var menuBackdrop = document.querySelector('.menu-backdrop');
+  function closeMenu() {
+    document.body.classList.remove('menu-open');
+    if (burger) burger.setAttribute('aria-expanded', 'false');
+  }
   if (burger) {
     burger.addEventListener('click', function () {
       var open = document.body.classList.toggle('menu-open');
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
     document.querySelectorAll('.mobile-menu a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        document.body.classList.remove('menu-open');
-        burger.setAttribute('aria-expanded', 'false');
-      });
+      a.addEventListener('click', closeMenu);
+    });
+    if (menuBackdrop) menuBackdrop.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
     });
   }
 
