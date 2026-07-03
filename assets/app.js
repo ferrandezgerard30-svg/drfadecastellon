@@ -29,7 +29,8 @@
 
     var canvas = document.getElementById('introCanvas');
     var can = document.getElementById('sprayCan');
-    var failsafe = setTimeout(function () { killIntro(false); }, 6000);
+    var isMobile = window.matchMedia('(max-width:820px)').matches;
+    var failsafe = setTimeout(function () { killIntro(false); }, isMobile ? 1800 : 6000);
     if (!canvas || !canvas.getContext) { return; } // el failsafe hará el resto
 
     // tocar/click para saltar la intro
@@ -38,13 +39,13 @@
     }, { once: true });
 
     var ctx = canvas.getContext('2d');
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1 : 2);
     var box = canvas.getBoundingClientRect();
     var W = Math.round(box.width * dpr), H = Math.round(box.height * dpr);
     canvas.width = W; canvas.height = H;
 
     var PALETTE = ['#ff2e88', '#29c8ff', '#69e95c', '#8b5cf6', '#ffc93c', '#ff7ab5'];
-    var RATTLE = 550, PAINT = 2150, ENDHOLD = 600;
+    var RATTLE = isMobile ? 160 : 550, PAINT = isMobile ? 620 : 2150, ENDHOLD = isMobile ? 160 : 600;
 
     // --- ARTE FINAL (texto graffiti) ---
     var art = document.createElement('canvas'); art.width = W; art.height = H;
@@ -146,8 +147,9 @@
     var particles = [], overspray = [], drips = [];
     var painted = -1; // última letra completada
 
+    var STAMP_N = isMobile ? 3 : 10;
     function stampAt(x, y, brush) {
-      for (var i = 0; i < 10; i++) {
+      for (var i = 0; i < STAMP_N; i++) {
         var a = Math.random() * Math.PI * 2;
         var r = Math.pow(Math.random(), 0.6) * brush;
         var px = x + Math.cos(a) * r, py = y + Math.sin(a) * r;
@@ -215,7 +217,7 @@
         // sellos interpolados para no dejar huecos
         if (prevHead) {
           var dist = Math.hypot(head.x - prevHead.x, head.y - prevHead.y);
-          var n = Math.max(1, Math.ceil(dist / (L.brush * 0.3)));
+          var n = Math.min(isMobile ? 3 : 8, Math.max(1, Math.ceil(dist / (L.brush * (isMobile ? 0.7 : 0.3)))));
           for (var i = 1; i <= n; i++) {
             var ix = lerp(prevHead.x, head.x, i / n), iy = lerp(prevHead.y, head.y, i / n);
             stampAt(ix, iy, L.brush);
@@ -688,5 +690,5 @@
   if (document.readyState === 'complete') sprayIntro();
   else window.addEventListener('load', sprayIntro);
   // failsafe global: si algo falla, la página arranca igual
-  setTimeout(startPage, 6000);
+  setTimeout(startPage, 2200);
 })();
