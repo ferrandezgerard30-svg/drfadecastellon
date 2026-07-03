@@ -104,17 +104,17 @@
     </div>
     <div class="wrap hero-grid">
       <div>
-        <div class="rating-pill" data-rv="up" data-onload style="--rv-d:.1s">
+        <div class="rating-pill hero-css-in" style="--d:.05s">
           <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
           <span><b>4,6</b> &middot; 51 rese&ntilde;as en Google</span>
         </div>
-        <h1 class="h-xl kinetic" data-onload>El arte del <span class="grad-text">fade</span> en Castell&oacute;n</h1>
-        <p class="lead" data-rv="up" data-onload style="--rv-d:.5s">
+        <h1 class="h-xl hero-css-in" style="--d:.16s">El arte del <span class="grad-text">fade</span> en Castell&oacute;n</h1>
+        <p class="lead hero-css-in" style="--d:.28s">
           Barber&iacute;a cl&aacute;sica con esp&iacute;ritu urbano. Cortes personalizados, barba,
           afeitado y coloraci&oacute;n para hombres, se&ntilde;ores y ni&ntilde;os, en la
           C. del Cant&oacute; de Castalia.
         </p>
-        <div class="hero-ctas" data-rv="up" data-onload style="--rv-d:.65s">
+        <div class="hero-ctas hero-css-in" style="--d:.38s">
           <a class="btn" href="tel:+34634376102">
             <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
             Llamar y reservar
@@ -125,14 +125,14 @@
           </a>
           <a class="btn ghost" href="galeria.html">Ver trabajos</a>
         </div>
-        <div class="hero-badges" data-rv="up" data-onload style="--rv-d:.8s">
+        <div class="hero-badges hero-css-in" style="--d:.48s">
           <span class="chip c1">Fades &amp; cortes personalizados</span>
           <span class="chip c2">Barba &amp; afeitado</span>
           <span class="chip c3">Coloraci&oacute;n &middot; Corte infantil</span>
         </div>
       </div>
-      <img class="hero-logo" src="assets/img/logo-760.webp"
-           alt="Emblema de Doctor Fade Barber&iacute;a" data-rv="scale" data-onload style="--rv-d:.7s" data-plx="0.06">
+      <img class="hero-logo hero-css-in" style="--d:.3s" src="assets/img/logo-760.webp"
+           alt="Emblema de Doctor Fade Barber&iacute;a" data-plx="0.06">
     </div>
     <div class="scroll-hint" aria-hidden="true"></div>
   </section>
@@ -267,42 +267,48 @@
     </div>
   </section>
 
-  <!-- ===== SHOWCASE SCROLL ===== -->
-  <div class="showcase-wrap">
-    <section class="showcase">
-      <div class="wrap">
-        <div>
-          <span class="kicker">Trabajos reales</span>
-          <h2 class="h-lg">Hecho en la silla de Doctor Fade</h2>
-          <div class="show-list" style="margin-top:22px">
-            <div class="show-item active">
-              <h3><span class="idx">01</span> Fade con dise&ntilde;o</h3>
-              <p>L&iacute;neas y dibujos a m&aacute;quina sobre degradado limpio.</p>
-            </div>
-            <div class="show-item">
-              <h3><span class="idx">02</span> Low fade + textura</h3>
-              <p>Degradado bajo con textura arriba, de los m&aacute;s pedidos.</p>
-            </div>
-            <div class="show-item">
-              <h3><span class="idx">03</span> Cl&aacute;sico renovado</h3>
-              <p>Corte cl&aacute;sico con acabado actual y perfilado de barba.</p>
-            </div>
-            <div class="show-item">
-              <h3><span class="idx">04</span> Estilo urbano</h3>
-              <p>Cortes modernos con personalidad, como el mullet degradado.</p>
-            </div>
-          </div>
-          <div class="show-progress"><i></i></div>
+  <!-- ===== TRABAJOS REALES (carrusel) ===== -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker" data-rv="up">Trabajos reales</span>
+      <h2 class="h-lg kinetic">Hecho en la silla de <span class="underline-draw">Doctor Fade</span></h2>
+      <div class="carousel" style="margin-top:32px" data-rv="up">
+        <div class="car-track" data-stagger="70">
+          <article class="work-card" data-rv="up">
+            <img src="assets/img/trabajo-1.webp" alt="Fade con dise&ntilde;o de l&iacute;neas hecho en Doctor Fade" loading="lazy">
+            <span class="tag">Fade con dise&ntilde;o</span>
+          </article>
+          <article class="work-card" data-rv="up">
+            <img src="assets/img/trabajo-2.webp" alt="Low fade con textura arriba" loading="lazy">
+            <span class="tag">Low fade + textura</span>
+          </article>
+          <article class="work-card" data-rv="up">
+            <img src="assets/img/trabajo-4.webp" alt="Corte cl&aacute;sico renovado con barba perfilada" loading="lazy">
+            <span class="tag">Cl&aacute;sico renovado</span>
+          </article>
+          <article class="work-card" data-rv="up">
+            <img src="assets/img/trabajo-7.webp" alt="Corte urbano estilo mullet con degradado" loading="lazy">
+            <span class="tag">Estilo urbano</span>
+          </article>
+          <article class="work-card" data-rv="up">
+            <img src="assets/img/trabajo-5.webp" alt="Fade medio con acabado limpio" loading="lazy">
+            <span class="tag">Fade medio</span>
+          </article>
+          <article class="work-card" data-rv="up">
+            <img src="assets/img/trabajo-8.webp" alt="Skin fade alto con degradado suave" loading="lazy">
+            <span class="tag">Skin fade</span>
+          </article>
         </div>
-        <div class="show-stage">
-          <img src="assets/img/trabajo-1.webp" class="on" alt="Fade con dise&ntilde;o de l&iacute;neas hecho en Doctor Fade">
-          <img src="assets/img/trabajo-2.webp" alt="Low fade con textura arriba">
-          <img src="assets/img/trabajo-4.webp" alt="Corte cl&aacute;sico renovado con barba perfilada">
-          <img src="assets/img/trabajo-7.webp" alt="Corte urbano estilo mullet con degradado">
+        <div class="car-nav">
+          <button class="car-btn car-prev" aria-label="Trabajo anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="car-btn car-next" aria-label="Trabajo siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
         </div>
       </div>
-    </section>
-  </div>
+      <div style="margin-top:28px" data-rv="up">
+        <a class="btn ghost" href="galeria.html">Ver galer&iacute;a completa &rarr;</a>
+      </div>
+    </div>
+  </section>
 
   <!-- ===== RESE&Ntilde;AS ===== -->
   <section class="section">

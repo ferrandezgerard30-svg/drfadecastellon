@@ -363,6 +363,8 @@ h1,h2,h3{font-family:var(--font-display);line-height:1.08;font-weight:700}
     radial-gradient(70% 60% at 75% 20%,rgba(139,92,246,.28),transparent 65%);
 }
 .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end}
+@keyframes heroIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.hero-css-in{animation:heroIn .7s cubic-bezier(.23,1,.32,1) both;animation-delay:var(--d,0s)}
 .rating-pill{
   display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;
   padding:9px 16px;border-radius:999px;font-size:13.5px;font-weight:600;
@@ -786,7 +788,7 @@ html.no-js #intro,html.no-js .cursor-dot,html.no-js .cursor-ring{display:none}
     width:88vw;max-width:360px;white-space:normal;text-align:center;
     font-size:10px;letter-spacing:.22em;line-height:1.6;
   }
-  .hero{min-height:92svh;align-items:flex-end}
+  .hero{min-height:80svh;align-items:center;padding-top:calc(var(--header-h) + 20px)}
   .hero-grid{grid-template-columns:1fr;gap:24px}
   .hero-logo{display:none}
   .hero-badges{display:none}
