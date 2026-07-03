@@ -69,14 +69,14 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 html:focus-within{scroll-behavior:smooth}
-html{overflow-x:hidden;overflow-x:clip}
+html{overflow-x:hidden}
 body{
   background:var(--bg);
   color:var(--text);
   font-family:var(--font-body);
   font-size:16.5px;
   line-height:1.6;
-  overflow-x:hidden;overflow-x:clip;
+  overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
 img{display:block;max-width:100%}
@@ -370,7 +370,9 @@ h1,h2,h3{font-family:var(--font-display);line-height:1.08;font-weight:700}
 }
 .rating-pill .stars{color:var(--amber-400);letter-spacing:2px;font-size:14px}
 .rating-pill b{color:var(--lime-400)}
-.hero .lead{margin:20px 0 30px}
+.hero .h-xl{text-shadow:0 2px 10px rgba(0,0,0,.55)}
+.hero .rating-pill{text-shadow:0 1px 3px rgba(0,0,0,.4)}
+.hero .lead{margin:20px 0 30px;text-shadow:0 1px 4px rgba(0,0,0,.5)}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
 .hero-logo{
   justify-self:end;width:clamp(160px,22vw,300px);
@@ -780,17 +782,23 @@ html.no-js #intro,html.no-js .cursor-dot,html.no-js .cursor-ring{display:none}
   body{font-size:15.5px}
   .main-nav,.header-cta{display:none}
   .burger{display:block}
+  #intro .intro-tag{
+    width:88vw;max-width:360px;white-space:normal;text-align:center;
+    font-size:10px;letter-spacing:.22em;line-height:1.6;
+  }
   .hero{min-height:92svh;align-items:flex-end}
   .hero-grid{grid-template-columns:1fr;gap:24px}
   .hero-logo{display:none}
   .hero-badges{display:none}
+  .hero .lead{display:none}
+  .scroll-hint{display:none}
   .split{grid-template-columns:1fr}
   .info-grid{grid-template-columns:1fr}
   .info-grid>*,.split>*,.hero-grid>*{min-width:0}
   .map-card .addr h2{font-size:17px}
   .hours .row{font-size:13.5px;padding:10px 10px;gap:10px}
   .panel-card{padding:20px 16px}
-  .showcase-wrap{height:190vh}
+  .showcase-wrap{height:190svh}
   .showcase .wrap{grid-template-columns:1fr;gap:14px;align-content:center}
   .show-stage{aspect-ratio:3/2.9;max-height:44svh;order:-1}
   .show-item p{display:none}
